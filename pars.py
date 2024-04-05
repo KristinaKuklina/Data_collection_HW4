@@ -49,7 +49,6 @@ def scrape_table_data(url):
 # Функция для сохранения данных в файл csv
 def save_data_to_csv(data, url_end):
     url_end = url_end.replace('-', '_')
-    file_name = f'starts_{url_end}'
     with open(f'starts_{url_end}.csv', 'w', newline='') as file:
         dict_writer = csv.DictWriter(file, data[0].keys())
         dict_writer.writeheader()
