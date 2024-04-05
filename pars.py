@@ -24,7 +24,8 @@ import time
 
 # Парсинг HTML-содержимого ответа с помощью библиотеки lxml
 def parsing_page_data(url):
-    response = requests.get(url)
+    response = requests.get(url, headers = {'User_Agent':
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'})
     tree = html.fromstring(response.content)
     return tree
 
@@ -74,3 +75,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
